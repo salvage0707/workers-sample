@@ -6,6 +6,8 @@
     "build": "vite build",
     "preview": "$npm_execpath run build && vite preview",
     "deploy": "$npm_execpath run build && wrangler deploy",
+    "build:staging": "CLOUDFLARE_ENV=staging vite build",
+    "deploy:staging": "$npm_execpath run build:staging && wrangler deploy --env staging",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {

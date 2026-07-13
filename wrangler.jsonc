@@ -1,14 +1,33 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "workers-sample",
-	"compatibility_date": "2025-08-03",
-	"main": "./src/index.tsx",
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "workers-sample",
+  "compatibility_date": "2025-08-03",
+  "main": "./src/index.tsx",
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
+  },
 	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "workers-sample-prod",
-			"database_id": "2b58c354-5425-4fb6-840b-ed48c1d2c59f",
-			"remote": true
-		}
-	]
+    {
+      "binding": "DB",
+      "database_name": "workers-sample-prod",
+      "database_id": "2b58c354-5425-4fb6-840b-ed48c1d2c59f",
+      "remote": true
+    }
+  ],
+  "env": {
+    "staging": {
+      "name": "worker-sample-staging",
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "workers-sample-staging",
+          "database_id": "45a08227-cbad-4c66-9d3f-fe95e001e873",
+          "remote": true
+        }
+      ]
+    }
+  }
 }
