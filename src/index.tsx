@@ -6,7 +6,7 @@ const app = new Hono<{ Bindings: Env }>()
 app.use(renderer)
 
 app.get('/', (c) => {
-  return c.render(<h1>Hello!</h1>)
+  return c.render(<h1>Hoge Hoge!</h1>)
 })
 
 app.get('/random', async (c) => {
